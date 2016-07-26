@@ -1,0 +1,10 @@
+mixin breadcrumbs(spec)
+	- spec = spec || {}
+	- spec.nodes = spec.nodes || ''
+
+	.breadcrumbs
+		ul
+			each val, key in spec.nodes
+				li(class="#{val['class']}")
+					a(href="#{val['link']}") #{val['title']}
+		.clear-float

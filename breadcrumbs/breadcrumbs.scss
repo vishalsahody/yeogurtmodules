@@ -1,0 +1,44 @@
+.breadcrumbs {
+	transition: padding 0.5s;
+	padding: 27px 29px;
+	ul{
+		font-family: open_sansregular;
+		font-size: (12/14)+em;
+		@include quick_action(reset_ul);
+		li {
+			float: left;
+			a {
+				text-decoration: none;
+				color: $grey_8;
+				&.active, &:hover, &:focus, &:hover {
+					color: $palette_grey_5;
+					text-decoration: underline;
+				}
+			}
+			&:before {
+				font-family: comcare;
+				content: $icon-chevron-right;
+				font-size: 0.8em;
+				margin: 0 7px;
+				color: $palette_blue_3;
+			}
+			&:first-child {
+				&:before{
+					display: none;
+				}
+			}
+			&.active {
+				a {
+					color: $palette_grey_5;
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+	&.is_stuck {
+		background: white;
+		padding: 15px 29px;
+		z-index: 1000;
+		border-bottom: 1px solid $palette_grey_1;
+	}
+}
